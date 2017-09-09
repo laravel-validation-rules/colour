@@ -1,5 +1,7 @@
 # Colour
 
+Validates colours, cuurrently supporting hex codes only.
+
 <p align="center">
   <a href="https://travis-ci.org/laravel-validation-rules/colour">
     <img src="https://img.shields.io/travis/laravel-validation-rules/colour.svg?style=flat-square">
