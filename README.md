@@ -8,3 +8,13 @@
     <img src="http://img.shields.io/badge/author-@clarkeash-blue.svg?style=flat-square">
   </a>
 </p>
+
+## Usgae
+
+```php
+use LVR\Colour\Hex;
+
+$request->validate([
+    'colour' => ['required', new Hex],
+]);
+```
