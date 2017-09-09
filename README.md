@@ -9,7 +9,7 @@
   </a>
 </p>
 
-## Usgae
+## Usage
 
 ```php
 use LVR\Colour\Hex;
