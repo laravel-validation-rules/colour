@@ -1,0 +1,30 @@
+{
+    "name": "laravel-validation-rules/colour",
+    "descrption": "validate colours",
+    "type": "library",
+    "keywords": [ "laravel", "validation" ],
+    "require": {
+        "illuminate/contracts": "^5.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.5",
+        "phpunit/phpunit": "^6.3"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Ashley Clarke",
+            "email": "me@ashleyclarke.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LVR\\Colour\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LVR\\Colour\\Tests\\": "tests/"
+        }
+    }
+}
