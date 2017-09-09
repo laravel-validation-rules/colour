@@ -9,16 +9,10 @@ class Hex implements Rule
     /**
      * @var bool
      */
-    protected $forceHash;
-
-    /**
-     * @var bool
-     */
     protected $forceFull;
 
-    public function __construct($forceHash = false, $forceFull = false)
+    public function __construct($forceFull = false)
     {
-        $this->forceHash = $forceHash;
         $this->forceFull = $forceFull;
     }
 
@@ -32,13 +26,7 @@ class Hex implements Rule
      */
     public function passes($attribute, $value)
     {
-        $pattern = '/^#';
-
-        if (!$this->forceHash) {
-            $pattern .= '?';
-        }
-
-        $pattern .= '([a-fA-F0-9]{6}';
+        $pattern = '/^#([a-fA-F0-9]{6}';
 
         if (!$this->forceFull) {
             $pattern .= '|[a-fA-F0-9]{3}';

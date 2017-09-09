@@ -26,18 +26,7 @@ class HexTest extends TestCase
         $this->assertTrue($this->validator('#ff0080')->passes());
         $this->assertTrue($this->validator('#fg0080')->fails());
 
-        $this->assertTrue($this->validator('#ff0080', true)->passes()); // hash
-        $this->assertTrue($this->validator('#ff0080', false, true)->passes()); // full
-    }
-
-    /** @test */
-    public function six_characters_without_hash()
-    {
-        $this->assertTrue($this->validator('ff0080')->passes());
-        $this->assertTrue($this->validator('fg0080')->fails());
-
-        $this->assertTrue($this->validator('ff0080', true)->fails()); // hash
-        $this->assertTrue($this->validator('ff0080', false, true)->passes()); // full
+        $this->assertTrue($this->validator('#ff0080',true)->passes()); // full
     }
 
     /** @test */
@@ -46,17 +35,6 @@ class HexTest extends TestCase
         $this->assertTrue($this->validator('#fff')->passes());
         $this->assertTrue($this->validator('#ggg')->fails());
 
-        $this->assertTrue($this->validator('#fff', true)->passes()); // hash
-        $this->assertTrue($this->validator('#fff', false, true)->fails()); // full
-    }
-
-    /** @test */
-    public function three_characters_without_hash()
-    {
-        $this->assertTrue($this->validator('fff')->passes());
-        $this->assertTrue($this->validator('ggg')->fails());
-
-        $this->assertTrue($this->validator('fff', true)->fails()); // hash
-        $this->assertTrue($this->validator('fff', false, true)->fails()); // full
+        $this->assertTrue($this->validator('#fff', false)->passes()); // full
     }
 }
