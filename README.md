@@ -1,6 +1,6 @@
 # Colour
 
-Validates colours, cuurrently supporting hex codes only.
+Validates colours, currently supporting hex codes only.
 
 <p align="center">
   <a href="https://travis-ci.org/laravel-validation-rules/colour">
@@ -19,6 +19,12 @@ Validates colours, cuurrently supporting hex codes only.
     <img src="http://img.shields.io/badge/author-@clarkeash-blue.svg?style=flat-square">
   </a>
 </p>
+
+## Installation
+
+```bash
+composer require laravel-validation-rules/colour
+```
 
 ## Usage
 
