@@ -1,6 +1,6 @@
 {
     "name": "laravel-validation-rules/colour",
-    "descrption": "validate colours",
+    "description": "Validate colours",
     "type": "library",
     "keywords": [ "laravel", "validation", "colour" ],
     "require": {
