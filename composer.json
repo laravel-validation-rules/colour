@@ -4,11 +4,11 @@
     "type": "library",
     "keywords": [ "laravel", "validation", "colour" ],
     "require": {
-        "illuminate/contracts": "^5.5 | ^6.0"
+        "illuminate/contracts": "^5.5 | ^6.0 | 7.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.5",
-        "phpunit/phpunit": "^6.3"
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^9.0"
     },
     "license": "Apache-2.0",
     "authors": [
