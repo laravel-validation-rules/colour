@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": [ "laravel", "validation", "colour" ],
     "require": {
-        "illuminate/contracts": "^5.5 | ^6.0 | 7.0"
+        "illuminate/contracts": "^5.5|^6.0|^7.0"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0",
@@ -15,6 +15,10 @@
         {
             "name": "Ashley Clarke",
             "email": "me@ashleyclarke.me"
+        },
+        {
+            "name": "Scott Robinson",
+            "email": "scott@dor.ky"
         }
     ],
     "autoload": {
