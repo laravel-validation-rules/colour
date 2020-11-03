@@ -34,7 +34,7 @@ class Hex implements Rule
     public function passes($attribute, $value)
     {
         $pattern = '/^#([a-fA-F0-9]{6}';
-    
+
         if (!$this->forceFull) {
             $pattern .= '|[a-fA-F0-9]{3}';
         }
@@ -47,7 +47,6 @@ class Hex implements Rule
             }
         }
 
-        
         $pattern .= ')$/';
 
         return (bool) preg_match($pattern, $value);
