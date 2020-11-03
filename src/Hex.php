@@ -11,9 +11,16 @@ class Hex implements Rule
      */
     protected $forceFull;
 
-    public function __construct($forceFull = false)
+    /**
+     * @var bool
+     */
+    protected $allowAlpha;
+
+    public function __construct($forceFull = false, $allowAlpha = false)
     {
         $this->forceFull = $forceFull;
+        
+        $this->allowAlpha = $allowAlpha;
     }
 
     /**
@@ -27,11 +34,20 @@ class Hex implements Rule
     public function passes($attribute, $value)
     {
         $pattern = '/^#([a-fA-F0-9]{6}';
-
+    
         if (!$this->forceFull) {
             $pattern .= '|[a-fA-F0-9]{3}';
         }
 
+        if ($this->allowAlpha) {
+            $pattern .= '|[a-fA-F0-9]{8}';
+    
+            if (!$this->forceFull) {
+                $pattern .= '|[a-fA-F0-9]{4}';
+            }
+        }
+
+        
         $pattern .= ')$/';
 
         return (bool) preg_match($pattern, $value);
