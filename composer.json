@@ -2,12 +2,16 @@
     "name": "laravel-validation-rules/colour",
     "description": "Validate colours",
     "type": "library",
-    "keywords": [ "laravel", "validation", "colour" ],
+    "keywords": [
+        "laravel",
+        "validation",
+        "colour"
+    ],
     "require": {
-        "illuminate/contracts": "^5.5|^6.0|^7.0|^8.0"
+        "illuminate/contracts": "^5.5|^6.0|^7.0|^8.0|^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0",
+        "orchestra/testbench": "^5.0|^7.0",
         "phpunit/phpunit": "^9.0"
     },
     "license": "Apache-2.0",
