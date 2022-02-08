@@ -37,4 +37,20 @@ class HexTest extends TestCase
 
         $this->assertTrue($this->validator('#fff', false)->passes()); // full
     }
+    
+    public function eight_characters_with_hash()
+    {
+        $this->assertTrue($this->validator('#ff008000')->fails());
+        $this->assertTrue($this->validator('#fg00800g', true, true)->fails());
+        $this->assertTrue($this->validator('#ff008000', true, true)->passes());
+    }
+
+    /** @test */
+    public function four_characters_with_hash()
+    {
+        $this->assertTrue($this->validator('#ffff', true, true)->passes());
+        $this->assertTrue($this->validator('#ffff', true, false)->fails());
+        $this->assertTrue($this->validator('#gggg', true, true)->fails());
+        $this->assertTrue($this->validator('#ffff', false, true)->passes());
+    }
 }
