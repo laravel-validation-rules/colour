@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+      - uses: ramsey/composer-install@v3
+      - run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+      - run: |
+          wget https://scrutinizer-ci.com/ocular.phar
+          php ocular.phar code-coverage:upload --format=php-clover coverage.clover
